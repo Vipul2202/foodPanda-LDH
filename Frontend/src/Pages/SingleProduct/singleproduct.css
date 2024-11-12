@@ -1,0 +1,178 @@
+/* ========single book======= */
+.bookcontent-container {
+    max-height: 4.5em; /* Adjust this value to control the number of lines displayed */
+    overflow: hidden;
+  }
+  
+  .bookcontent {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Adjust this value to the number of lines you want to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .authtext{
+    font-weight: bold;
+  }
+
+
+
+  .blogcontent-container {
+    max-height: 18em; /* Adjust this value to control the number of lines displayed */
+    overflow: hidden;
+  }
+  
+  .blogcontent {
+    display: -webkit-box;
+    -webkit-line-clamp: 9; /* Adjust this value to the number of lines you want to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .shayaricontent-container {
+    max-height: 4.5em; /* Adjust this value to control the number of lines displayed */
+    overflow: hidden;
+  }
+  
+  .shayaricontent {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Adjust this value to the number of lines you want to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .blogcontent-container {
+    max-height: 5em; /* Adjust this value to control the number of lines displayed */
+    overflow: hidden;
+  }
+  
+  .blogcontent {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Adjust this value to the number of lines you want to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .blogtitlecontent-container {
+    max-height: 4.5em; /* Adjust this value to control the number of lines displayed */
+    overflow: hidden;
+  }
+  
+  .blogtitlecontent {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Adjust this value to the number of lines you want to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .shayaricontent-container2 {
+    max-height: 5em; /* Adjust this value to control the number of lines displayed */
+    overflow: hidden;
+  }
+  
+  .shayaricontent2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Adjust this value to the number of lines you want to display */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.productname{
+    color:  #7A7F34;
+}
+  .singleproductWraper{
+    background-color: #ffff;
+    padding-top: 180px;
+    padding-bottom: 124px;
+    margin-bottom: -100px;
+  }
+
+  .singleProduct_icon a i{
+    color:  #AFA957;
+  }
+  .singleProduct_icon a i:hover{
+    color:  #7A7F34;
+  }
+  .login-button {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.4em 0.7em;
+    border: 3px solid #AFA957;
+    border-radius: 2px;
+    position: relative;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1); */
+    color: #AFA957 ;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+    background-color: #fff;
+  }
+  
+  .login-button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #7A7F34;
+    z-index: -1;
+  }
+  
+  .login-button:hover, .login-button:focus {
+    color: white;
+  }
+  
+  .login-button:hover:before, .login-button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  
+  .login-button:active {
+    transform: scale(0.9);
+  }
+
+  .article {
+    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    border-radius: 5px;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 15px;
+    margin: 15px 0 30px;
+  }
+
+  .reviewstart{
+    font-size: 30px !important;
+    width: 50px;
+    height: 50px;
+  }
+
+  .heart{
+    color: #000;
+    position: absolute;
+    margin-left: auto;
+    margin-top: auto;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.heart-checkbox{
+    display: none;
+}
+
+
+.heart-checkbox:checked + .heart {
+    color: red;
+}
