@@ -4,9 +4,7 @@
     "react-bootstrap": "^2.10.4"
   },
   "workspaces": [
-    "backend",
-    "frontend"
+    "Backend",
+    "Frontend"
   ]
 }
-
-
