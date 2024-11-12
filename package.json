@@ -1,7 +1,14 @@
 {
+  "name": "foodpanda",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
     "bootstrap": "^5.3.3",
     "react-bootstrap": "^2.10.4"
+  },
+  "scripts": {
+    "dev-backend": "npm run start --workspace=Backend",
+    "dev-frontend": "npm run start --workspace=Frontend"
   },
   "workspaces": [
     "Backend",
