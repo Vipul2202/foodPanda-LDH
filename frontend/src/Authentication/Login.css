@@ -1,0 +1,107 @@
+/* 
+===============
+login
+=============== */
+/*--login--*/
+.login{
+	padding:6em 0;
+   
+}
+.login-bg{
+/* background: linear-gradient(135deg,#1f1c18 , #ff4e50, #f9d423); */
+}
+.main-agileits {
+    background-color: #FFFFFF !important;
+    margin: 0em auto ;
+	box-shadow: 0px 0px 15px 0px #D6D6D6;
+	-o-box-shadow: 0px 0px 15px 0px #D6D6D6;
+	-moz-box-shadow: 0px 0px 15px 0px #D6D6D6;
+	-webkit-box-shadow: 0px 0px 15px 0px #D6D6D6;
+	padding: 3em ;
+}
+
+.key  input[type="text"] ,.key  input[type="password"] ,.key  input[type="number"] ,.key  input[type="email"]{
+    
+    padding: 10px 10px;
+    font-size: 1em;
+    border: none;
+    border-bottom: none;
+    outline: none;
+    color: #000;
+    float: left;
+    background: none;
+}
+.key i{
+	    float: left;
+    color: #999;
+    font-size: 1.1em;
+    padding: 13px;
+}
+.key {
+    background: #fff;
+    border: 1px solid #999;
+    margin-bottom: 2em;
+}
+.form-w3agile h3{
+    color: #7A7F34;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+.form-w3agile input[type="submit"] {
+    background: #7A7F34;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    border: none;
+    font-size: 1em;
+    outline: none;
+    width: 32%;
+    cursor: pointer;
+    margin-bottom:30px;
+}
+.form-w3agile  input[type="submit"]:hover{
+	/* background:rgb(101, 146, 37); */
+	background:#EF7A53;
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.form-w3agile button[type="submit"] {
+    background: #7A7F34;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    border: none;
+    font-size: 1em;
+    outline: none;
+    width: 32%;
+    cursor: pointer;
+    margin-bottom:30px;
+}
+.form-w3agile  button[type="submit"]:hover{
+
+	background:#EF7A53;
+	
+}
+.forg a {
+    text-decoration: none;
+    color: #7A7F34;
+    font-size:1em;
+}
+.forg a:hover{
+	color:#EF7A53;
+}
+.forg-left{
+	float:left;
+}
+.forg-right{
+	float:right;
+}
+.form1 input[type="submit"] {
+	margin-bottom:0;
+}
+/*--//login--*/
+
