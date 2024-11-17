@@ -13,7 +13,7 @@ export default function Home() {
   const { id } = useParams();
   console.log("id", id);
 
-  const token = sessionStorage.getItem('token');
+  const token = sessionStorage.getItem("token");
   const header = {
     Accept: "application/json",
     Authorization: sessionStorage.getItem("token"),
@@ -25,14 +25,13 @@ export default function Home() {
   useEffect(() => {
     const getbanner = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/general/getCurrentBanner");
+        const res = await axios.get(
+          "http://localhost:8080/general/getCurrentBanner"
+        );
 
-        console.log("banner hai ye: ", res.data?.data?.Image)
+        console.log("banner hai ye: ", res.data?.data?.Image);
         setUrl(res.data?.data?.Image);
         console.log("diya hua url: ", url);
-
-        
-
       } catch (error) {
         console.log(error, "error in banner");
       }
@@ -65,7 +64,9 @@ export default function Home() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/general/getAllReviews",);
+        const response = await axios.get(
+          "http://localhost:8080/general/getAllReviews"
+        );
         setReviews(response.data.review);
       } catch (error) {
         console.error(error);
@@ -106,7 +107,6 @@ export default function Home() {
         className="container-fluid bg-dark text-white py-5 bg-center bg-cover bg-no-repeat  "
         // style={{ backgroundImage: `url(${url.data})` }}
         style={{ backgroundImage: `url(${url})` }}
-
       >
         <div className="container text-center py-5 heroinside">
           {/* <p className="text-warning text-uppercase mb-3">// The Best Bakery</p> */}
@@ -186,9 +186,8 @@ export default function Home() {
           setCurrentPage={setCurrentPage}
           totalPages={totalPages}
         />
-        
       </div>
-      
+
       <div className="container-xxl py-6">
         <div className="container">
           <div className="row g-5">
@@ -331,9 +330,10 @@ export default function Home() {
             <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
               <h1 className="display-6 mb-4">What Do We Offer For You?</h1>
               <p className="mb-5">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                sed stet lorem sit clita duo justo magna dolore erat amet
+                At Shree Krishna Bakers, we offer fresh, pure, and authentic
+                baked goods crafted with care. Our mission is to deliver
+                uncompromised quality and quantity, ensuring every bite is a
+                treat to remember!
               </p>
               <div className="row gy-5 gx-4">
                 <div className="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
@@ -344,7 +344,7 @@ export default function Home() {
                     <h5 className="mb-0">Quality Products</h5>
                   </div>
                   <span>
-                    Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos
+                  Pure, Fresh,and Perfect Quality You Can Trust in Every Bite!
                   </span>
                 </div>
                 <div className="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
@@ -355,7 +355,8 @@ export default function Home() {
                     <h5 className="mb-0">Custom Products</h5>
                   </div>
                   <span>
-                    Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos
+                  Tailored to Your Taste – Crafted Just the Way You Like It!
+
                   </span>
                 </div>
                 <div className="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
@@ -363,10 +364,11 @@ export default function Home() {
                     <div className="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
                       <i className="fa fa-cart-plus text-white"></i>
                     </div>
-                    <h5 className="mb-0">Online Order</h5>
+                    <h5 className="mb-0">Affordable Delights</h5>
                   </div>
                   <span>
-                    Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos
+                    {/* Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos */}
+                    Premium Quality at Prices That Delight Your Wallet!
                   </span>
                 </div>
                 <div className="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
@@ -374,10 +376,10 @@ export default function Home() {
                     <div className="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
                       <i className="fa fa-truck text-white"></i>
                     </div>
-                    <h5 className="mb-0">Home Delivery</h5>
+                    <h5 className="mb-0">Freshly Baked</h5>
                   </div>
                   <span>
-                    Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos
+                  From Oven to Table – Always Fresh, Always Delicious!
                   </span>
                 </div>
               </div>
@@ -387,14 +389,14 @@ export default function Home() {
                 <div className="col-6">
                   <img
                     className="img-fluid rounded"
-                    src="/assets/img/service-1.jpg"
+                    src="/assets/img/ai.webp"
                     alt=""
                   />
                 </div>
                 <div className="col-6 align-self-end">
                   <img
                     className="img-fluid rounded"
-                    src="/assets/img/service-2.jpg"
+                    src="/assets/img/qu.webp"
                     alt=""
                   />
                 </div>

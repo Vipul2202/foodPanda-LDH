@@ -15,7 +15,7 @@ export default function Footer() {
               <h4 className="text-light mb-4">Bakery Address</h4>
               <p className="mb-2 flex justify-start">
                 <i className="fa fa-map-marker-alt me-3"></i>SM 37, GIC Rd,
-                Hastinapur, Hastinapur Kaurwan, Uttar Pradesh (250404)
+                Hastinapur, Hastinapur Kaurwan, UP(250404)
               </p>
               <p className="mb-2 justify-start flex">
                 <i className="fa fa-phone-alt me-3 "></i>+91 95689-81068
@@ -64,42 +64,42 @@ export default function Footer() {
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light rounded p-1"
-                    src="./assets/img/pt.jpg"
+                    src="./assets/img/bir.jpeg"
                     alt="Image"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light rounded p-1"
-                    src="./assets/img/b.jpeg"
+                    src="./assets/img/c.jpg"
                     alt="Image"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light rounded p-1"
-                    src="./assets/img/p.jpeg"
+                    src="./assets/img/kul.jpeg"
                     alt="Image"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light rounded p-1"
-                    src="./assets/img/pt.jpeg"
+                    src="./assets/img/bis.jpeg"
                     alt="Image"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light rounded p-1"
-                    src="./assets/img/cake.jpeg"
+                    src="./assets/img/p.jpg"
                     alt="Image"
                   />
                 </div>
                 <div className="col-4">
                   <img
                     className="img-fluid bg-light rounded p-1"
-                    src="./assets/img/k.jpeg"
+                    src="./assets/img/pastry.jpeg"
                     alt="Image"
                   />
                 </div>

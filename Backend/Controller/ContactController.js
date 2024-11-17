@@ -148,7 +148,7 @@ getsinglecontacts = (req,res)=>{
 
   latestContact= (req, res) => {
     Contact.find()
-      .sort({ created_at: -1 }) 
+    .sort({ _id: -1 }) 
       .limit(3) 
       .exec()
       .then((latestmsg) => {

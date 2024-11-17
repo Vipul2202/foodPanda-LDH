@@ -8,11 +8,11 @@ export default function About() {
         <div className="container text-center pt-5 pb-3">
             <h1 className="display-4 text-white animated slideInDown mb-3">About Us</h1>
             <nav aria-label="breadcrumb animated slideInDown">
-                <ol className="breadcrumb justify-content-center mb-0">
+                {/* <ol className="breadcrumb justify-content-center mb-0">
                     <li className="breadcrumb-item"><a className="text-white" href="#">Home</a></li>
                     <li className="breadcrumb-item"><a className="text-white" href="#">Pages</a></li>
                     <li className="breadcrumb-item text-primary active" aria-current="page">About</li>
-                </ol>
+                </ol> */}
             </nav>
         </div>
     </div>

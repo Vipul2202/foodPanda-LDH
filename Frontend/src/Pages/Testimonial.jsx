@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { FaUserCircle } from "react-icons/fa"; // User icon
-import { BsCheckCircle } from "react-icons/bs"; // Check icon
-import { useNavigate } from 'react-router-dom'; // For page navigation
+import { FaUserCircle } from "react-icons/fa";
+import { BsCheckCircle } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Testimonial = () => {
@@ -12,14 +12,10 @@ const Testimonial = () => {
   const [comment, setComment] = useState("");
   const [reviews, setReviews] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const [showPopup, setShowPopup] = useState(false); // Modal visibility
-  const reviewsPerPage = 3; // Number of reviews to show per page
-  const navigate = useNavigate(); // For page navigation
-
-  // Handle star rating click
-  const handleStarClick = (index) => {
-    setRating(index + 1);
-  };
+  const [showPopup, setShowPopup] = useState(false);
+  const [showAuthAlert, setShowAuthAlert] = useState(false);
+  const reviewsPerPage = 3;
+  const navigate = useNavigate();
 
   const token = sessionStorage.getItem('token');
   const header = {
@@ -27,6 +23,17 @@ const Testimonial = () => {
     Authorization: sessionStorage.getItem("token"),
   };
 
+  // Check if the user is authenticated
+  useEffect(() => {
+    if (!token) {
+      setShowAuthAlert(true); // Show the authentication alert modal if no token
+    }
+  }, [token]);
+
+  // Handle star rating click
+  const handleStarClick = (index) => {
+    setRating(index + 1);
+  };
 
   // Handle form submission
   const handleSubmit = async (e) => {
@@ -42,7 +49,7 @@ const Testimonial = () => {
         email,
         rating,
         comment
-      },{ headers: header });
+      }, { headers: header });
       console.log(response.data);
       setReviews([...reviews, { name, email, rating, comment }]);
       setName("");
@@ -54,7 +61,7 @@ const Testimonial = () => {
       // Close popup after 3 seconds and navigate to home
       setTimeout(() => {
         setShowPopup(false);
-        navigate('/'); // Redirect to home page
+        navigate('/');
       }, 3000);
     } catch (error) {
       console.error("Error submitting review:", error);
@@ -63,10 +70,16 @@ const Testimonial = () => {
 
   // Fetch reviews from backend on component mount
   useEffect(() => {
-    axios.post("http://localhost:8080/admin/get-all-Review",{ headers: header })
+    axios.post("http://localhost:8080/admin/get-all-Review", {}, { headers: header })
       .then(response => setReviews(response.data.review))
       .catch(error => console.error(error));
   }, []);
+
+  // Handle the OK button click in the authentication alert
+  const handleAuthAlertOk = () => {
+    setShowAuthAlert(false);
+    navigate('/login'); // Redirect to login page
+  };
 
   // Calculate the number of pages needed
   const totalPages = Math.ceil(reviews.length / reviewsPerPage);
@@ -76,6 +89,22 @@ const Testimonial = () => {
 
   return (
     <div className="testimonial-container">
+      {/* Authentication Alert Modal */}
+      {showAuthAlert && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+            <h2 className="text-2xl font-semibold mb-4">Authentication Required</h2>
+            <p className="text-gray-700 mb-6">Please log in or sign up to submit a review.</p>
+            <button
+              onClick={handleAuthAlertOk}
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="container-fluid page-header py-6 wow fadeIn" data-wow-delay="0.1s">
         <div className="container text-center pt-5 pb-3">
           <h1 className="display-4 text-white animated slideInDown mb-3">Testimonial</h1>

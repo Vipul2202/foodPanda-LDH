@@ -293,6 +293,7 @@ app.use(express.static(__dirname + "/public"));
 const adminroutes = require("./routes/admin.routes");
 const generalRoutes = require("./routes/general.routes");
 app.use("/admin", adminroutes);
+
 app.use("/general", generalRoutes);
 
 const seeder = require("./config/seeder");

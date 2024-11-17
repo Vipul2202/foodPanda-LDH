@@ -124,6 +124,7 @@ deleteReview = async (req, res) => {
 getallReview = async(req,res)=>{
   try {
     const review = await Review.find()
+    .sort({ _id: -1 })
     res.status(200).json({
       success: true,
       review,
