@@ -46,8 +46,17 @@ import CardPage from "./Components/Card-page";
 import AdminDashboard from "./Admin/AdminDashboard";
 import AdminMaster from "./Admin/Layout/AdminMaster";
 import UpdateOrder from "./Admin/Pages/Order/UpdateOrder";
+import { useEffect } from "react";
+import Protected from "../src/Protected";
+import ProtectedRoute from "../src/Protected";
 function App() {
     const [isActive, setIsActive] = useState(false);
+    useEffect(() => {
+      const meta = document.createElement('meta');
+      meta.name = 'robots';
+      meta.content = 'noindex, nofollow';
+      document.head.appendChild(meta);
+    }, []);
   return (
     <div className="App">
       <BrowserRouter>
@@ -117,10 +126,13 @@ function App() {
               <AdminMaster isActive={isActive} setIsActive={setIsActive} />
             }
           >
+            {/* //admin Routes */}
             <Route
               path="/admin"
               element={
+                <ProtectedRoute>
                 <AdminDashboard isActive={isActive} setIsActive={setIsActive} />
+                </ProtectedRoute>
               }
             />
             <Route

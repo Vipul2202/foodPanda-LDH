@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
@@ -26,19 +25,35 @@ const ReviewsList = ({ displayedReviews, currentPage, setCurrentPage, totalPages
         )}
       </div>
 
-  {/* Pagination Controls */}
-  <div className="flex justify-center mt-6">
-    {Array.from({ length: totalPages }).map((_, pageIndex) => (
-      <button
-        key={pageIndex}
-        onClick={() => setCurrentPage(pageIndex)}
-        className={`mx-1 px-3 py-1 rounded ${currentPage === pageIndex ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-700'}`}
-      >
-        {pageIndex + 1}
-      </button>
-    ))}
-  </div>
-</div>
+      {/* Pagination Controls */}
+      <div className="flex justify-center mt-6">
+        {/* Previous Button */}
+        <button
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 0))}
+          className={`mx-2 px-4 py-2 rounded text-white font-semibold ${
+            currentPage === 0
+              ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              : 'bg-gradient-to-r from-yellow-400 via-red-400 to-pink-400 hover:opacity-90'
+          }`}
+          disabled={currentPage === 0}
+        >
+          Previous
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1))}
+          className={`mx-2 px-4 py-2 rounded text-white font-semibold ${
+            currentPage === totalPages - 1
+              ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              : 'bg-gradient-to-r from-yellow-400 via-red-400 to-pink-400 hover:opacity-90'
+          }`}
+          disabled={currentPage === totalPages - 1}
+        >
+          Next
+        </button>
+      </div>
+    </div>
   );
 };
 
