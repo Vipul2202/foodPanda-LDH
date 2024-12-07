@@ -12,7 +12,10 @@ export default function AddBanner({ setIsActive, isActive }) {
   };
 
   let data = JSON.stringify({
-    "imageUrl": "https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image_url:
+      bannerUrl.length > 0
+        ? bannerUrl
+        : "https://images.unsplash.com/photo-1511407397940-d57f68e81203?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   });
 
   let config = {
@@ -57,7 +60,6 @@ export default function AddBanner({ setIsActive, isActive }) {
 
         // console.log("Banner added successfully", res.data);
         console.log("Banner added successfully");
-
       } catch (error) {
         console.error(
           "Error adding banner:",

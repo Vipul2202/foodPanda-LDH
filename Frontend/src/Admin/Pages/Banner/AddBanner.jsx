@@ -21,13 +21,14 @@ function AddBanner({ setIsActive, isActive }) {
     const formData = new FormData();
     formData.append("description", description);
     formData.append("price", price);
-    formData.append("Image", image);
+    formData.append("image_url", image);
 
 
     try {
+      console.log("form data is: ", formData)
       const response = await apiServices.addBanner(formData);
       if (response.data.success) {
-        // console.log(response)
+        console.log(response)
         toast.success(response.data.msg);
         setTimeout(() => {
           nav("/admin/manage-banner");
