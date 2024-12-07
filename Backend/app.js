@@ -16,6 +16,11 @@ app.use("/admin", adminroutes);
 
 app.use("/general", generalRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).json({msg: "Servers are active and running  !"})
+})
+
+
 const seeder = require("./config/seeder");
 seeder.adminseeder();
 
