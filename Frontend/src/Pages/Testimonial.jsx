@@ -22,6 +22,7 @@ const Testimonial = () => {
     Accept: "application/json",
     Authorization: sessionStorage.getItem("token"),
   };
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   // Check if the user is authenticated
   useEffect(() => {
@@ -44,7 +45,7 @@ const Testimonial = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8080/admin/addReview", {
+      const response = await axios.post(`${apiUrl}/admin/addReview`, {
         name,
         email,
         rating,
@@ -70,7 +71,7 @@ const Testimonial = () => {
 
   // Fetch reviews from backend on component mount
   useEffect(() => {
-    axios.post("http://localhost:8080/admin/get-all-Review", {}, { headers: header })
+    axios.post(`${apiUrl}/admin/get-all-Review`, {}, { headers: header })
       .then(response => setReviews(response.data.review))
       .catch(error => console.error(error));
   }, []);

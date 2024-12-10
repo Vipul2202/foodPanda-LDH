@@ -22,11 +22,13 @@ export default function Home() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [url, setUrl] = useState(cake);
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     const getbanner = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8080/general/getCurrentBanner"
+          `${apiUrl}/general/getCurrentBanner`
         );
 
         console.log("banner hai ye: ", res.data?.data?.Image);
@@ -65,7 +67,7 @@ export default function Home() {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/general/getAllReviews"
+          `${apiUrl}/general/getAllReviews`
         );
         setReviews(response.data.review);
       } catch (error) {

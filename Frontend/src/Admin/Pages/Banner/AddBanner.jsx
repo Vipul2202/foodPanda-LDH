@@ -9,7 +9,6 @@ function AddBanner({ setIsActive, isActive }) {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null); // Changed "Image" to "image"
 
-
   const handlebannerData = async (e) => {
     e.preventDefault();
 

@@ -246,7 +246,7 @@ export default function Navbar() {
                   Contact
                 </Link>
               </div>
-              <div className="d-none d-lg-flex align-items-center gap-3">
+              <div className="d-none d-lg-flex align-items-center gap-2 w-full">
                 <Link
                   to="/login"
                   className="btn-lg-square border border-light rounded-circle"

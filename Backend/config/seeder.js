@@ -3,6 +3,10 @@ const bcrypt=require("bcrypt")
 const saltround=10
 
 exports.adminseeder=(req,res)=>{
+
+    try {
+
+
     User.findOne({email:"admin@gmail.com"})
     .then(admindata=>{
         if(!admindata){
@@ -20,5 +24,11 @@ console.log("admin already exists")
     }
 
 })
+
+
+} catch (err) {
+    console.log("error in seeder")
+    console.error(err)
+}
    
 }
