@@ -1,5 +1,6 @@
 import axios from "axios"
-const BASE_URL="http://localhost:8080/admin/"
+// const apiUrl = process.env.REACT_APP_API_URL;
+const BASE_URL=`${apiUrl}/admin/`
 const token = sessionStorage.getItem('token');
 const header = {
   Accept: "application/json",
