@@ -6,8 +6,9 @@ export default function ManageReview({ setIsActive, isActive }) {
   const [reviews, setReviews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const reviewsPerPage = 6;
+  const apiUrl = process.env.REACT_APP_API_URL;
 // let a = axios.get("http://localhost:8080/review/all")
-let a = axios.get("http://localhost:8080/general/getAllReviews")
+let a = axios.get(`${apiUrl}/general/getAllReviews`)
 
 .then(response => setReviews(response.data.review))
 .catch(error => console.error(error));
@@ -15,7 +16,7 @@ console.log("yeh mera data hai",a);
 
   useEffect(() => {
     // Hard-coded dummy reviews
-    axios.get("http://localhost:8080/review/all")
+    axios.get(`${apiUrl}/review/all`)
       .then(response => setReviews(response.data.review))
       .catch(error => console.error(error));
   }, []);
@@ -26,7 +27,7 @@ console.log("yeh mera data hai",a);
 
   const handleDelete = async(_id) => {
     try{
-      const response = await axios.post(`http://localhost:8080/review/delete/${_id}`);
+      const response = await axios.post(`${apiUrl}/review/delete/${_id}`);
       console.log('Success:', response.data);
     } catch (error) {
       console.error('Error:', error);

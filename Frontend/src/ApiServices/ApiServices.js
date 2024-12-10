@@ -5,7 +5,8 @@ const header = {
   Accept: "application/json",
   Authorization: sessionStorage.getItem("token"),
 };
-export const BASE_URL_IMG="http://localhost:8080/"
+const apiUrl = process.env.REACT_APP_API_URL;
+export const BASE_URL_IMG=`${apiUrl}`
 // const token=sessionStorage.getItem("token")
 // const header={
 //     Authorization:"application/json "+token
