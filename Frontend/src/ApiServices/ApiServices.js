@@ -1,12 +1,12 @@
 import axios from "axios"
 // const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = process.env.REACT_APP_API_URL;
 const BASE_URL=`${apiUrl}/admin/`
 const token = sessionStorage.getItem('token');
 const header = {
   Accept: "application/json",
   Authorization: sessionStorage.getItem("token"),
 };
-const apiUrl = process.env.REACT_APP_API_URL;
 export const BASE_URL_IMG=`${apiUrl}`
 // const token=sessionStorage.getItem("token")
 // const header={
