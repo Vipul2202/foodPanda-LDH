@@ -4,12 +4,12 @@ function addBanner(req, res) {
   var validation = "";
   // TODO fIX THE VALIDATIONS USE NULL INSTEAD IF ""
 
-  if (req.body.description == "") {
-    validation += "description is required";
-  }
-  if (req.body.price == "") {
-    validation += "price is required";
-  }
+  // if (req.body.description == "") {
+  //   validation += "description is required";
+  // }
+  // if (req.body.price == "") {
+  //   validation += "price is required";
+  // }
   // if (req.body.Image == "") {
   //   validation += "Image is required";
   // }
