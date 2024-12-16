@@ -9,6 +9,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 // import ReviewsList from "./SingleProduct/ReviewList";
 import ReviewsList from "./SingleProduct/ReviewList";
+import { backendApi } from "../utils/constants";
 export default function Home() {
   const { id } = useParams();
   console.log("id", id);
@@ -28,7 +29,7 @@ export default function Home() {
     const getbanner = async () => {
       try {
         const res = await axios.get(
-          `https://foodpanda-ldh.onrender.com/general/getCurrentBanner`
+          `${backendApi}general/getCurrentBanner`
         );
 
         console.log("banner hai ye: ", res.data?.data?.Image);
@@ -67,7 +68,7 @@ export default function Home() {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          `https://foodpanda-ldh.onrender.com/general/getAllReviews`
+          `${backendApi}general/getAllReviews`
         );
         setReviews(response.data.review);
       } catch (error) {

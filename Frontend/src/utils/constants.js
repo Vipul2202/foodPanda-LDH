@@ -1,0 +1,1 @@
+export const backendApi = "https://foodpanda-ldh.onrender.com/";
