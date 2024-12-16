@@ -1,13 +1,14 @@
 import axios from "axios"
+import { backendApi } from "../utils/constants";
 // const apiUrl = process.env.REACT_APP_API_URL;
-const apiUrl = process.env.REACT_APP_API_URL;
-const BASE_URL=`${apiUrl}/admin/`
+// const apiUrl = process.env.REACT_APP_API_URL;
+const BASE_URL=`${backendApi}admin/`
 const token = sessionStorage.getItem('token');
 const header = {
   Accept: "application/json",
   Authorization: sessionStorage.getItem("token"),
 };
-export const BASE_URL_IMG=`${apiUrl}`
+export const BASE_URL_IMG=`${backendApi}`
 // const token=sessionStorage.getItem("token")
 // const header={
 //     Authorization:"application/json "+token

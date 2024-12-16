@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import cake from "../../assets/img/cake.jpg";
 import axios from "axios";
+import { backendApi } from "../utils/constants";
 
 export default function AddBanner({ setIsActive, isActive }) {
   const [bannerUrl, setBannerUrl] = useState("");
@@ -10,7 +11,7 @@ export default function AddBanner({ setIsActive, isActive }) {
     Accept: "application/json",
     Authorization: sessionStorage.getItem("token"),
   };
-  const apiUrl = process.env.REACT_APP_API_URL;
+  // const apiUrl = process.env.REACT_APP_API_URL;
   let data = JSON.stringify({
     image_url:
       bannerUrl.length > 0
@@ -21,15 +22,15 @@ export default function AddBanner({ setIsActive, isActive }) {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `${apiUrl}/admin/addBanner`,
+    url: `${backendApi}admin/addBanner`,
     headers: {
       Accept: "application/json, text/plain, */*",
       "Accept-Language": "en-US,en-IN;q=0.9,en;q=0.8",
       Connection: "keep-alive",
       "Content-Type": "application/json",
       DNT: "1",
-      Origin: `${apiUrl}`,
-      Referer: `${apiUrl}`,
+      Origin: `${backendApi}`,
+      Referer: `${backendApi}`,
       "Sec-Fetch-Dest": "empty",
       "Sec-Fetch-Mode": "cors",
       "Sec-Fetch-Site": "same-site",
@@ -72,7 +73,7 @@ export default function AddBanner({ setIsActive, isActive }) {
 
   const handleDeleteBanner = async () => {
     try {
-      const res = await axios.post(`${apiUrl}/admin/deleteBanner`, {
+      const res = await axios.post(`${backendApi}admin/deleteBanner`, {
         imageUrl,
       });
       console.log("Banner deleted successfully", res.data);

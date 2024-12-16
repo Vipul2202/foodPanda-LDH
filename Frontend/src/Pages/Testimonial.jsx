@@ -4,6 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { BsCheckCircle } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { backendApi } from '../utils/constants';
 
 const Testimonial = () => {
   const [rating, setRating] = useState(0);
@@ -22,7 +23,7 @@ const Testimonial = () => {
     Accept: "application/json",
     Authorization: sessionStorage.getItem("token"),
   };
-  const apiUrl = process.env.REACT_APP_API_URL;
+  // const apiUrl = process.env.REACT_APP_API_URL;
 
   // Check if the user is authenticated
   useEffect(() => {
@@ -45,7 +46,7 @@ const Testimonial = () => {
     }
 
     try {
-      const response = await axios.post(`${apiUrl}/admin/addReview`, {
+      const response = await axios.post(`${backendApi}admin/addReview`, {
         name,
         email,
         rating,
@@ -71,7 +72,7 @@ const Testimonial = () => {
 
   // Fetch reviews from backend on component mount
   useEffect(() => {
-    axios.post(`${apiUrl}/admin/get-all-Review`, {}, { headers: header })
+    axios.post(`${backendApi}admin/get-all-Review`, {}, { headers: header })
       .then(response => setReviews(response.data.review))
       .catch(error => console.error(error));
   }, []);

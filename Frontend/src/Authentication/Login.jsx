@@ -29,12 +29,12 @@ function Login() {
   const handleForm = (e) => {
     e.preventDefault();
     setLoading(true);
-    captchaRef.current.reset();
-    if (!recaptchaValue) {
-      toast.error("Please complete the reCAPTCHA verification.");
-      setLoading(false);
-      return;
-    }
+    // captchaRef.current.reset();
+    // if (!recaptchaValue) {
+    //   toast.error("Please complete the reCAPTCHA verification.");
+    //   setLoading(false);
+    //   return;
+    // }
     let data = {
       email: email,
       password: pass,
@@ -90,10 +90,10 @@ function Login() {
     setEmail(e.target.value);
   };
   // -------ReCAPTCHA-------
-  const onChange = (value) => {
-    setRecaptchaValue(value);
-    setIsButtonDisabled(!value);
-  };
+  // const onChange = (value) => {
+  //   setRecaptchaValue(value);
+  //   setIsButtonDisabled(!value);
+  // };
   const cssobj = {
     position: "absolute",
     top: "25%",
@@ -169,12 +169,12 @@ function Login() {
                   <div className="clearfix"></div>
                 </div>
                 <div className=" d-flex mb-3">
-                  <ReCAPTCHA
+                  {/* <ReCAPTCHA
                     className=""
                     sitekey={SITE_KEY}
                     onChange={onChange}
                     ref={captchaRef}
-                  />
+                  /> */}
                   <div className="clearfix"></div>
                 </div>
 

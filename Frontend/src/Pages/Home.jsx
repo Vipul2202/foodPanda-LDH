@@ -23,7 +23,7 @@ export default function Home() {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(true);
   const [url, setUrl] = useState(cake);
-  const apiUrl = process.env.REACT_APP_API_URL;
+  // const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const getbanner = async () => {
