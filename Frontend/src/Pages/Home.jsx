@@ -28,7 +28,7 @@ export default function Home() {
     const getbanner = async () => {
       try {
         const res = await axios.get(
-          `${apiUrl}/general/getCurrentBanner`
+          `http://localhost:8080/general/getCurrentBanner`
         );
 
         console.log("banner hai ye: ", res.data?.data?.Image);
@@ -67,7 +67,7 @@ export default function Home() {
     const fetchReviews = async () => {
       try {
         const response = await axios.get(
-          `${apiUrl}/general/getAllReviews`
+          `http://localhost:8080/general/getAllReviews`
         );
         setReviews(response.data.review);
       } catch (error) {
