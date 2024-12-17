@@ -83,7 +83,7 @@ adduser = (req, res) => {
       //   method: 'post',
       // })
       //   .then((recaptchaResponse) => {
-          if (recaptchaResponse.data.success) {
+          // if (recaptchaResponse.data.success) {
             if (req.body.name == '') validator += 'Name is required';
             if (req.body.email == '') validator += 'Email is required';
             if (req.body.password == '') validator += 'Password is required';
@@ -149,13 +149,13 @@ adduser = (req, res) => {
                 }
               });
             }
-          } else {
-            res.json({
-              status: 400,
-              success: false,
-              message: 'reCAPTCHA verification failed',
-            });
-          }
+          // } else {
+          //   res.json({
+          //     status: 400,
+          //     success: false,
+          //     message: 'reCAPTCHA verification failed',
+          //   });
+          // }
         // }
       // )
       //   .catch((error) => {
@@ -310,14 +310,14 @@ login = (req, res) => {
   // console.log(req.body)
   let validator = "";
 
-  const recaptchaResponse = req.body.recaptchaValue;
+  // const recaptchaResponse = req.body.recaptchaValue;
 
-  axios({
-    url: `https://www.google.com/recaptcha/api/siteverify?secret=${SECRETKEY}&response=${recaptchaResponse}`,
-    method: "post",
-  })
-    .then((recaptchaResponse) => {
-      if (recaptchaResponse.data.success) {
+  // axios({
+  //   url: `https://www.google.com/recaptcha/api/siteverify?secret=${SECRETKEY}&response=${recaptchaResponse}`,
+  //   method: "post",
+  // })
+    // .then((recaptchaResponse) => {
+    //   if (recaptchaResponse.data.success) {
         // CAPTCHA verification successful, continue with login validation
         if (req.body.email === "") validator += "Email is required";
         if (req.body.password === "") validator += "Password is required";
@@ -373,22 +373,23 @@ login = (req, res) => {
             }
           });
         }
-      } else {
-        res.json({
-          status: 400,
-          success: false,
-          msg: "reCAPTCHA verification failed",
-        });
-      }
-    })
-    .catch((error) => {
-      console.log("reCAPTCHA error:", error);
-      res.status(500).json({
-        status: 500,
-        success: false,
-        msg: "Internal server error",
-      });
-    });
+      // } 
+      // else {
+      //   res.json({
+      //     status: 400,
+      //     success: false,
+      //     msg: "reCAPTCHA verification failed",
+      //   });
+      // }
+    // })
+    // .catch((error) => {
+    //   console.log("reCAPTCHA error:", error);
+    //   res.status(500).json({
+    //     status: 500,
+    //     success: false,
+    //     msg: "Internal server error",
+    //   });
+    // });
 };
 
 
