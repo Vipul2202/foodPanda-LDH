@@ -76,13 +76,13 @@ adduser = (req, res) => {
   register = (req, res) => {
       var validator = '';
     
-      const recaptchaResponse = req.body.recaptchaValue;
+      // const recaptchaResponse = req.body.recaptchaValue;
     
-      axios({
-        url: `https://www.google.com/recaptcha/api/siteverify?secret=${SECRETKEY}&response=${recaptchaResponse}`,
-        method: 'post',
-      })
-        .then((recaptchaResponse) => {
+      // axios({
+      //   url: `https://www.google.com/recaptcha/api/siteverify?secret=${SECRETKEY}&response=${recaptchaResponse}`,
+      //   method: 'post',
+      // })
+      //   .then((recaptchaResponse) => {
           if (recaptchaResponse.data.success) {
             if (req.body.name == '') validator += 'Name is required';
             if (req.body.email == '') validator += 'Email is required';
@@ -156,15 +156,16 @@ adduser = (req, res) => {
               message: 'reCAPTCHA verification failed',
             });
           }
-        })
-        .catch((error) => {
-          console.log('Recaptcha error:', error);
-          res.status(500).json({
-            status: 500,
-            success: false,
-            message: 'Internal server error',
-          });
-        });
+        // }
+      // )
+      //   .catch((error) => {
+      //     console.log('Recaptcha error:', error);
+      //     res.status(500).json({
+      //       status: 500,
+      //       success: false,
+      //       message: 'Internal server error',
+      //     });
+      //   });
     };
 
 

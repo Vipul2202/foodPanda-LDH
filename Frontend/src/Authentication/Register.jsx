@@ -15,7 +15,7 @@ function Register() {
 	const [email, setEmail] = useState();
 	const [contact, setContact] = useState();
 	const [password, setPassword] = useState();
-	const [recaptchaValue, setRecaptchaValue] = useState();
+	// const [recaptchaValue, setRecaptchaValue] = useState();
 	const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 	const captchaRef = useRef();
 
@@ -64,11 +64,11 @@ function Register() {
 		return;
 	  }
   
-	  if (!recaptchaValue) {
-		toast.error("Please complete the reCAPTCHA.");
-		setLoading(false);
-		return;
-	  }
+	//   if (!recaptchaValue) {
+	// 	toast.error("Please complete the reCAPTCHA.");
+	// 	setLoading(false);
+	// 	return;
+	//   }
 	 
   
 	  let data = new FormData();
@@ -76,7 +76,7 @@ function Register() {
 	  data.append("email", email);
 	  data.append("contact", contact);
 	  data.append("password", password);
-	  data.append("recaptchaValue", recaptchaValue);
+	//   data.append("recaptchaValue", recaptchaValue);
   
 	  apiServices
 		.register(data)
@@ -129,7 +129,7 @@ function Register() {
 
 	// -------ReCAPTCHA-------
 	const onChange = (value) => {
-		setRecaptchaValue(value);
+		// setRecaptchaValue(value);
 		setIsButtonDisabled(!value);
 	  };
 	  
@@ -235,7 +235,7 @@ function Register() {
                   <div className="clearfix"></div>
                 </div>
                 <div className='d-flex justify-end'>
-                  <button type="submit" disabled={isButtonDisabled}>
+                  <button type="submit" >
                     Submit<i class="fa-solid fa-user-plus px-1"></i>
                   </button>
                 </div>

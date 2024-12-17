@@ -38,7 +38,6 @@ function Login() {
     let data = {
       email: email,
       password: pass,
-      recaptchaValue: recaptchaValue,
     };
     apiServices
       .login(data)
@@ -182,7 +181,7 @@ function Login() {
                   <button
                     type="submit"
                     value="Login"
-                    disabled={isButtonDisabled}
+                    // disabled={isButtonDisabled}
                   >
                     Submit<i class="fa-solid fa-right-to-bracket px-1"></i>
                   </button>
